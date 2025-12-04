@@ -81,7 +81,7 @@ export const MotionBackground = () => {
         },
       },
       detectRetina: true,
-    } as IOptions),
+    } as unknown as IOptions),
     [],
   );
 
