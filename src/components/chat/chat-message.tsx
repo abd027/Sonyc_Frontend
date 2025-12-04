@@ -32,6 +32,11 @@ const splitMarkdown = (markdown: string): { type: 'text' | 'code'; content: stri
   return result;
 };
 
+interface ChatMessageProps {
+  message: Message;
+  isStreaming?: boolean;
+}
+
 export function ChatMessage({ message, isStreaming = false }: ChatMessageProps) {
   const isUser = message.role === "user";
 
