@@ -21,7 +21,7 @@ export const MotionBackground = () => {
     console.log(container);
   };
 
-  const options: IOptions = useMemo(
+  const options = useMemo(
     () => ({
       background: {
         color: {
@@ -62,7 +62,7 @@ export const MotionBackground = () => {
         },
         opacity: {
           value: { min: 0.1, max: 0.4 },
-           animation: {
+          animation: {
             enable: true,
             speed: 1,
             minimumValue: 0.05,
@@ -81,7 +81,7 @@ export const MotionBackground = () => {
         },
       },
       detectRetina: true,
-    }),
+    } as IOptions),
     [],
   );
 
