@@ -27,8 +27,13 @@ class ApiClient {
     options: RequestInit = {}
   ): Promise<T> {
     const token = this.getToken();
-    const headers: HeadersInit = {
-      ...options.headers,
+    // Convert HeadersInit to Record<string, string> to allow bracket notation
+    const headers: Record<string, string> = {
+      ...(options.headers instanceof Headers 
+        ? Object.fromEntries(options.headers.entries())
+        : Array.isArray(options.headers)
+        ? Object.fromEntries(options.headers)
+        : (options.headers as Record<string, string>) || {}),
     };
 
     // Only add Content-Type for requests with body

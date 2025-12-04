@@ -23,28 +23,25 @@ function renderMath(source: unknown) {
 // Custom renderer for marked
 const renderer = new marked.Renderer();
 const originalCodeRenderer = renderer.code;
-renderer.code = (code, lang, escaped) => {
-    // Ensure `code` is a string before trying to process it.
-    if (typeof code !== 'string') {
-        return originalCodeRenderer.call(renderer, code, lang, escaped);
+renderer.code = ({ text, lang }: { text: string; lang?: string; escaped?: boolean }) => {
+    // Ensure `text` is a string before trying to process it.
+    if (typeof text !== 'string') {
+        // Fallback to default rendering if text is not a string
+        return `<pre><code>${String(text)}</code></pre>`;
     }
     const language = lang || 'plaintext';
     // a simple escapecode function
     function escapecode(code: string): string {
         return code.replace(/</g, '&lt;').replace(/>/g, '&gt;');
     }
-    const highlighted = escapecode(code);
+    const highlighted = escapecode(text);
     return `<pre><code class="language-${language}">${highlighted}</code></pre>`;
 };
 
 marked.setOptions({
     renderer,
-    pedantic: false,
     gfm: true,
     breaks: false,
-    sanitize: false,
-    smartypants: false,
-xhtml: false,
 });
 
 
