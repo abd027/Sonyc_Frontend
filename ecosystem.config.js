@@ -4,7 +4,7 @@ module.exports = {
       name: 'frontend',
       script: 'npm',
       args: 'start',
-      cwd: './frontend',
+      cwd: '.',
       instances: 1,
       exec_mode: 'fork',
       env: {
