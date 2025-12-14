@@ -76,7 +76,7 @@ export function ChatInput({ onSendMessage }: ChatInputProps) {
             value={content}
             onChange={handleContentChange}
             onKeyDown={handleKeyDown}
-            placeholder="Message Chatify AI..."
+            placeholder="Message Sonyc..."
             className={cn(
               "w-full bg-transparent border-none pr-14 py-3 pl-4 resize-none focus-visible:ring-0 focus-visible:ring-offset-0 max-h-64 overflow-y-auto [&::-webkit-scrollbar]:hidden transition-all duration-200",
               isExpanded ? "rounded-t-2xl rounded-b-lg" : "rounded-full"
@@ -93,7 +93,7 @@ export function ChatInput({ onSendMessage }: ChatInputProps) {
           </Button>
         </form>
         <p className="text-xs text-center text-muted-foreground mt-2">
-          Chatify AI can make mistakes. Consider checking important information.
+          Sonyc can make mistakes. Consider checking important information.
         </p>
       </div>
     </div>
