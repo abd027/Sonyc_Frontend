@@ -57,10 +57,10 @@ export function ChatView({
               {chatTypes.map(({type, description}) => {
                   const Icon = ChatIcons[type];
                   return (
-                      <Button key={type} variant="outline" className="h-20 flex-col items-start justify-start p-4 gap-2 bg-background/50 backdrop-blur-xl border hover:bg-primary/10 hover:border-primary/30 hover:text-primary" onClick={() => onNewChatSelect(type)}>
-                          <Icon className="h-5 w-5 text-primary"/>
-                          <span className="font-semibold">{type}</span>
-                          <span className="text-xs text-muted-foreground">{description}</span>
+                      <Button key={type} variant="outline" className="h-20 flex-col items-start justify-start p-4 gap-2 bg-background/50 backdrop-blur-xl border hover:bg-primary/10 hover:border-primary/30 hover:text-primary whitespace-normal break-words overflow-wrap-anywhere min-w-0 w-full" onClick={() => onNewChatSelect(type)}>
+                          <Icon className="h-5 w-5 text-primary flex-shrink-0"/>
+                          <span className="font-semibold break-words w-full">{type}</span>
+                          <span className="text-xs text-muted-foreground break-words w-full">{description}</span>
                       </Button>
                   )
               })}
@@ -94,10 +94,10 @@ export function ChatView({
                         <Button
                           key={index}
                           variant="outline"
-                          className="h-auto text-left justify-start p-3 bg-background/50 backdrop-blur-xl border hover:bg-primary/10 hover:border-primary/30 whitespace-normal hover:text-primary"
+                          className="h-auto text-left justify-start p-3 bg-background/50 backdrop-blur-xl border hover:bg-primary/10 hover:border-primary/30 whitespace-normal break-words overflow-wrap-anywhere min-w-0 w-full hover:text-primary"
                           onClick={() => onSendMessage(prompt)}
                         >
-                            {prompt}
+                            <span className="break-words">{prompt}</span>
                         </Button>
                     ))}
                 </div>

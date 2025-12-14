@@ -2,8 +2,8 @@ module.exports = {
   apps: [
     {
       name: 'frontend',
-      script: 'npm',
-      args: 'start',
+      script: 'node',
+      args: '.next/standalone/server.js',
       cwd: '.',
       instances: 1,
       exec_mode: 'fork',

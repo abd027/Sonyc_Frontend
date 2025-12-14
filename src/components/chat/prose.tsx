@@ -22,7 +22,11 @@ export function Prose({ html }: { html: string }) {
   return (
     <div
       ref={ref}
-      className="prose prose-sm dark:prose-invert text-foreground max-w-none"
+      className="prose prose-sm dark:prose-invert text-foreground max-w-none break-words overflow-wrap-anywhere"
+      style={{
+        wordBreak: 'break-word',
+        overflowWrap: 'anywhere',
+      }}
       dangerouslySetInnerHTML={{ __html: html }}
     />
   );

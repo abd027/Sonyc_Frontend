@@ -44,7 +44,7 @@ export function ChatMessage({ message, isStreaming = false }: ChatMessageProps) 
     const htmlContent = parseMarkdown(message.content);
     return (
       <div className="flex items-start gap-4 animate-enter-from-bottom justify-end">
-        <div className="bg-primary/20 rounded-br-none rounded-lg px-4 py-3 max-w-3xl break-words">
+        <div className="bg-primary/20 rounded-br-none rounded-lg px-4 py-3 max-w-3xl break-words overflow-wrap-anywhere min-w-0">
           <Prose html={htmlContent} />
         </div>
         <Avatar className="h-8 w-8 flex-shrink-0">
